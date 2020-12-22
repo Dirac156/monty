@@ -9,5 +9,4 @@ void _nop(stack_t **head, unsigned int argument)
 {
 (void)argument;
 printf("%d\n", (*head)->n);
-printf("%d\n", line_number);
 }

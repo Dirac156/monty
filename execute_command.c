@@ -2,27 +2,29 @@
 
 /**
   *execute_command - execute user_command
-  *@tokens: user command.
-  *@argument: argument used.
+  *@t: user command.
+  *@arg: argument used.
+  *@h: the head.
+  *@line_number: the number of lines.
   */
 
-void execute_command(char **tokens, unsigned int argument, stack_t *head)
+void execute_command(char **t, unsigned int arg, stack_t *h, int line_number)
 {
 int i, confirmation = 0;
 instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"print", _print},
 {"pop", _pop}, {"swap", _swap}, {"add", _add}, {"nop", _nop}, {NULL, NULL}};
 for (i = 0; f[i].opcode != NULL; i++)
 {
-if (_strcmp(f[i].opcode, tokens[0]))
+if (_strcmp(f[i].opcode, t[0]))
 {
-f[i].f(&head, argument);
+f[i].f(&h, arg);
 confirmation = 1;
 break;
 }
 }
 if (!confirmation)
 {
-fprintf(stderr, "L%d: unknown instruction %s\n", line_number, tokens[0]);
+fprintf(stderr, "L%d: unknown instruction %s\n", line_number, t[0]);
 exit(EXIT_FAILURE);
 }
 }

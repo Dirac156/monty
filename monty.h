@@ -35,7 +35,7 @@ void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 char **tokenaization(char *str);
-void execute_command(char **str, unsigned int argument, stack_t *head);
+void execute_command(char **str, unsigned int argument, stack_t *head, int);
 void _print(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
@@ -48,6 +48,5 @@ void free_double(char **s);
 int _strlen_space(char *s);
 int _strcmp(char *str, char *str2);
 int _strlen(char *s);
-int check_argument(char **tokens);
-extern int line_number;
+int check_argument(char **tokens, int line_number);
 #endif

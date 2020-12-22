@@ -3,10 +3,11 @@
 /**
   *check_argument - verify the argument passed.
   *@tokens: all tokens passed as argument.
+  *@line_number: the number of commands.
   *Return: the argument.
   */
 
-int check_argument(char **tokens)
+int check_argument(char **tokens, int line_number)
 {
 int i = 0, argument;
 instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"print", _print},
