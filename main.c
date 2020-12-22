@@ -40,6 +40,7 @@ execute_command(tokens, argument, &head, line_number);
 getline_return = getline(&lineptr, &n, file);
 free(tokens);
 }
-free(lineptr), free(file), free(head);
+free(lineptr), free(file);
+free_list(head);
 return (0);
 }

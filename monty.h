@@ -49,4 +49,5 @@ int _strlen_space(char *s);
 int _strcmp(char *str, char *str2);
 int _strlen(char *s);
 int check_argument(char **tokens, int line_number);
+void free_list(stack_t *head);
 #endif
