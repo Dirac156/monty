@@ -1,5 +1,10 @@
 #ifndef MONTY_H
 #define MONTY_H
+#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+extern int line_number;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -30,4 +35,9 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+char **tokenaization(char *str);
+void execute_command(char **str);
+
+void free_double(char **s);
+int _strlen_space(char *s);
 #endif
