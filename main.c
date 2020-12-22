@@ -13,12 +13,7 @@ char *lineptr, **tokens;
 FILE *file;
 int getline_return, line_number;
 unsigned int argument;
-stack_t *head = malloc(sizeof(stack_t));
-if (!head)
-{
-fprintf(stderr, "Error: malloc failed\n");
-exit(EXIT_FAILURE);
-}
+stack_t *head;
 if (argc != 2)
 {
 fprintf(stderr, "%s\n", "USAGE: monty file");
@@ -41,7 +36,7 @@ for (line_number = 1; getline_return != -1; line_number++)
 {
 tokens = tokenaization(lineptr);
 argument = check_argument(tokens, line_number);
-execute_command(tokens, argument, head, line_number);
+execute_command(tokens, argument, &head, line_number);
 getline_return = getline(&lineptr, &n, file);
 free(tokens);
 }

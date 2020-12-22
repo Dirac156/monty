@@ -8,7 +8,7 @@
   *@line_number: the number of lines.
   */
 
-void execute_command(char **t, unsigned int arg, stack_t *h, int line_number)
+void execute_command(char **t, unsigned int arg, stack_t **h, int line_number)
 {
 int i, confirmation = 0;
 instruction_t f[] = {{"push", _push}, {"pall", _pall}, {NULL, NULL}};
@@ -16,7 +16,7 @@ for (i = 0; f[i].opcode != NULL; i++)
 {
 if (_strcmp(f[i].opcode, t[0]))
 {
-f[i].f(&h, arg);
+f[i].f(h, arg);
 confirmation = 1;
 break;
 }

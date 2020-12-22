@@ -15,7 +15,9 @@ exit(EXIT_FAILURE);
 }
 new->n = argument;
 if (!(*head))
-*head = new;
+{
+(*head) = new;
+}
 else
 {
 tm = *head;

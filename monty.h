@@ -35,7 +35,7 @@ void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 char **tokenaization(char *str);
-void execute_command(char **str, unsigned int argument, stack_t *head, int);
+void execute_command(char **str, unsigned int argument, stack_t **head, int);
 void _print(stack_t **stack, unsigned int line_number);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
