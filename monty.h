@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-extern int line_number;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -36,8 +35,19 @@ void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 char **tokenaization(char *str);
-void execute_command(char **str);
+void execute_command(char **str, unsigned int argument, stack_t *head);
+void _print(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 
 void free_double(char **s);
 int _strlen_space(char *s);
+int _strcmp(char *str, char *str2);
+int _strlen(char *s);
+int check_argument(char **tokens);
+extern int line_number;
 #endif

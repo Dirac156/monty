@@ -1,20 +1,25 @@
 #include "monty.h"
-
+int line_number;
 /**
   *main - the main function
   *@argc: the number of arguments.
   *@argv: arguments
   *Return: Always 0
   */
-int line_number = 1;
 
 int main(int argc, char const *argv[])
 {
 size_t n;
-char *lineptr;
+char *lineptr, **tokens;
 FILE *file;
 int getline_return;
-
+unsigned int argument;
+stack_t *head = malloc(sizeof(stack_t));
+if (!head)
+{
+fprintf(stderr, "Error: malloc failed\n");
+exit(EXIT_FAILURE);
+}
 if (argc != 2)
 {
 fprintf(stderr, "%s\n", "USAGE: monty file");
@@ -33,16 +38,14 @@ fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
 getline_return = getline(&lineptr, &n, file);
-for (; getline_return != -1; line_number++)
+for (line_number = 1; getline_return != -1; line_number++)
 {
-char **tokens;
 tokens = tokenaization(lineptr);
-execute_command(tokens);
-//execute commands
+argument = check_argument(tokens);
+execute_command(tokens, argument, head);
 getline_return = getline(&lineptr, &n, file);
 free(tokens);
 }
-free(lineptr);
-free(file);
-return 0;
+free(lineptr), free(file), free(head);
+return (0);
 }
