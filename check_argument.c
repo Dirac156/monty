@@ -3,14 +3,14 @@
 /**
   *check_argument - verify the argument passed.
   *@tokens: all tokens passed as argument.
-  *@line_number: the number of commands.
   *Return: the argument.
   */
 
-int check_argument(char **tokens, int line_number)
+int check_argument(char **tokens)
 {
-int i = 0, argument;
-instruction_t f[] = {{"push", _push}, {"pall", _pall}, {NULL, NULL}};
+int i = 0, argument = 0;
+instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"pint", _pint},
+{NULL, NULL}};
 for (; f[i].opcode != NULL; i++)
 {
 if (_strcmp(tokens[0], f[i].opcode))

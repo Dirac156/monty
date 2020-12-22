@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-  *free_dlistint - free a dlistint_t.
+  *free_list - free a dlistint_t.
   *@head: the head of the list.
   */
 void free_list(stack_t *head)

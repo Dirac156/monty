@@ -1,4 +1,5 @@
 #include "monty.h"
+int line_number = 1;
 /**
   *main - the main function
   *@argc: the number of arguments.
@@ -11,7 +12,7 @@ int main(int argc, char const *argv[])
 size_t n;
 char *lineptr, **tokens;
 FILE *file;
-int getline_return, line_number;
+int getline_return;
 unsigned int argument;
 stack_t *head;
 if (argc != 2)
@@ -35,8 +36,8 @@ getline_return = getline(&lineptr, &n, file);
 for (line_number = 1; getline_return != -1; line_number++)
 {
 tokens = tokenaization(lineptr);
-argument = check_argument(tokens, line_number);
-execute_command(tokens, argument, &head, line_number);
+argument = check_argument(tokens);
+execute_command(tokens, argument, &head);
 getline_return = getline(&lineptr, &n, file);
 free(tokens);
 }
