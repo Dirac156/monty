@@ -11,8 +11,7 @@
 void execute_command(char **t, unsigned int arg, stack_t *h, int line_number)
 {
 int i, confirmation = 0;
-instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"print", _print},
-{"pop", _pop}, {"swap", _swap}, {"add", _add}, {"nop", _nop}, {NULL, NULL}};
+instruction_t f[] = {{"push", _push}, {"pall", _pall}, {NULL, NULL}};
 for (i = 0; f[i].opcode != NULL; i++)
 {
 if (_strcmp(f[i].opcode, t[0]))

@@ -10,8 +10,7 @@
 int check_argument(char **tokens, int line_number)
 {
 int i = 0, argument;
-instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"print", _print},
-{"pop", _pop}, {"swap", _swap}, {"add", _add}, {"nop", _nop}, {NULL, NULL}};
+instruction_t f[] = {{"push", _push}, {"pall", _pall}, {NULL, NULL}};
 for (; f[i].opcode != NULL; i++)
 {
 if (_strcmp(tokens[0], f[i].opcode))
