@@ -43,6 +43,7 @@ void _add(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **head, unsigned int argument);
 
 void free_double(char **s);
 int _strlen_space(char *s);

@@ -7,8 +7,8 @@
   */
 void _pall(stack_t **head, unsigned int argument)
 {
-(void)argument;
 stack_t *tm;
+(void)argument;
 if (!(*head))
 return;
 tm = *head;
