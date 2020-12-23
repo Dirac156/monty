@@ -14,7 +14,7 @@ fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
 new->n = argument;
-if (!(*head))
+if (!(*head) || count_push == 1)
 {
 (*head) = new;
 }

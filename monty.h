@@ -52,4 +52,5 @@ int _strlen(char *s);
 int check_argument(char **tokens);
 void free_list(stack_t *head);
 extern int line_number;
+extern int count_push;
 #endif

@@ -1,5 +1,6 @@
 #include "monty.h"
 int line_number = 1;
+int count_push = 0;
 /**
   *main - the main function
   *@argc: the number of arguments.
@@ -12,7 +13,7 @@ int main(int argc, char const *argv[])
 size_t n;
 char *lineptr, **tokens;
 FILE *file;
-int getline_return;
+ssize_t getline_return;
 unsigned int argument;
 stack_t *head;
 if (argc != 2)
@@ -21,7 +22,7 @@ fprintf(stderr, "%s\n", "USAGE: monty file");
 exit(EXIT_FAILURE);
 }
 file = fopen(argv[1], "r");
-if (file == NULL)
+if (!file)
 {
 fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 exit(EXIT_FAILURE);

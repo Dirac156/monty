@@ -9,7 +9,7 @@ void _pop(stack_t **head, unsigned int argument)
 {
 stack_t *tm;
 (void)argument;
-if (!(*head))
+if (!(*head) || count_push == 0)
 {
 fprintf(stderr, "L%d: can't pop an empty stacks\n", line_number);
 exit(EXIT_FAILURE);

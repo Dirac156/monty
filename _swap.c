@@ -10,7 +10,7 @@ void _swap(stack_t **head, unsigned int argument)
 stack_t *t1, *t2, *t3;
 (void)argument;
 (void)head;
-if (!(*head) || !((*head)->next))
+if (!(*head) || !((*head)->next) || count_push < 2)
 {
 fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 exit(EXIT_FAILURE);

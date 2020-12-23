@@ -19,7 +19,6 @@ if (_strcmp(f[i].opcode, t[0]))
 {
 f[i].f(h, arg);
 confirmation = 1;
-break;
 }
 }
 if (!confirmation)
