@@ -14,9 +14,9 @@ instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"pint", _pint},
 {NULL, NULL}};
 for (; f[i].opcode != NULL; i++)
 {
-if (_strcmp(tokens[0], f[i].opcode))
+if (strcmp(tokens[0], f[i].opcode) == 0)
 {
-if (_strcmp(tokens[0], "push"))
+if (strcmp(tokens[0], "push") == 0)
 {
 if (!tokens[1] || (tokens[1][0] != '0' && (atoi(tokens[1]) == 0)))
 {

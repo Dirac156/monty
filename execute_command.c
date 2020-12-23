@@ -15,7 +15,7 @@ instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"pint", _pint},
 {NULL, NULL}};
 for (i = 0; f[i].opcode != NULL; i++)
 {
-if (_strcmp(f[i].opcode, t[0]))
+if (strcmp(f[i].opcode, t[0]) == 0)
 {
 f[i].f(h, arg);
 confirmation = 1;
