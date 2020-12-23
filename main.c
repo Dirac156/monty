@@ -43,6 +43,7 @@ getline_return = getline(&lineptr, &n, file);
 free(tokens);
 }
 free(lineptr), free(file);
+if (!head || count_push != 0)
 free_list(head);
 return (0);
 }

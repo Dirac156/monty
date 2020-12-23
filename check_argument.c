@@ -18,7 +18,6 @@ if (_strcmp(tokens[0], f[i].opcode))
 {
 if (_strcmp(tokens[0], "push"))
 {
-count_push++;
 if (!tokens[1] || (tokens[1][0] != '0' && (atoi(tokens[1]) == 0)))
 {
 fprintf(stderr, "L%d: unvalid argument push\n", line_number);
