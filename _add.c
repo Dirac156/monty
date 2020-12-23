@@ -8,7 +8,7 @@
 void _add(stack_t **head, unsigned int argument)
 {
 unsigned int sum;
-if (!(*head) || !((*head)->next))
+if (!(*head) || !((*head)->next) || count_push < 2)
 {
 fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 exit(EXIT_FAILURE);
