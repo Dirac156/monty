@@ -12,7 +12,7 @@ void execute_command(char **t, unsigned int arg, stack_t **h, char *s, FILE *fi)
 int i, confirmation = 0;
 instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"pint", _pint},
 {"pop", _pop}, {"swap", _swap}, {"add", _add}, {"nop", _nop}, {"sub", _sub},
-{NULL, NULL}};
+{"div", _div}, {"mul", _mul}, {"mod", _mod}, {NULL, NULL}};
 for (i = 0; f[i].opcode != NULL; i++)
 {
 if (strcmp(f[i].opcode, t[0]) == 0)
