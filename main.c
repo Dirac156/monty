@@ -37,6 +37,7 @@ for (line_number = 1; getline_return != -1; line_number++)
 {
 tokens = tokenaization(lineptr);
 argument = check_argument(tokens, lineptr, file);
+if (tokens[0][0] != '#' || strcmp(tokens[0], "nop") == 0)
 execute_command(tokens, argument, &head, lineptr, file);
 getline_return = getline(&lineptr, &n, file);
 free(tokens);
