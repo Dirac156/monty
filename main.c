@@ -1,6 +1,6 @@
 #include "monty.h"
 int line_number = 1;
-int count_push = 0;
+stack_t *head;
 /**
   *main - the main function
   *@argc: the number of arguments.
@@ -15,7 +15,6 @@ char *lineptr, **tokens;
 FILE *file;
 ssize_t getline_return;
 unsigned int argument;
-stack_t *head;
 if (argc != 2)
 {
 fprintf(stderr, "%s\n", "USAGE: monty file");
@@ -37,13 +36,12 @@ getline_return = getline(&lineptr, &n, file);
 for (line_number = 1; getline_return != -1; line_number++)
 {
 tokens = tokenaization(lineptr);
-argument = check_argument(tokens);
-execute_command(tokens, argument, &head);
+argument = check_argument(tokens, lineptr, file);
+execute_command(tokens, argument, &head, lineptr, file);
 getline_return = getline(&lineptr, &n, file);
 free(tokens);
 }
 free(lineptr), free(file);
-if (!head || count_push != 0)
 free_list(head);
 return (0);
 }

@@ -9,7 +9,7 @@ void _pall(stack_t **head, unsigned int argument)
 {
 stack_t *tm;
 (void)argument;
-if (!(*head) || count_push == 0)
+if (!(*head))
 return;
 tm = *head;
 while (tm)

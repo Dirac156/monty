@@ -7,7 +7,7 @@
   *@h: the head.
   */
 
-void execute_command(char **t, unsigned int arg, stack_t **h)
+void execute_command(char **t, unsigned int arg, stack_t **h, char *s, FILE *fi)
 {
 int i, confirmation = 0;
 instruction_t f[] = {{"push", _push}, {"pall", _pall}, {"pint", _pint},
@@ -24,6 +24,9 @@ confirmation = 1;
 if (!confirmation)
 {
 fprintf(stderr, "L%d: unknown instruction %s\n", line_number, t[0]);
+free(t);
+free(s);
+free(fi);
 exit(EXIT_FAILURE);
 }
 }
