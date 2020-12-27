@@ -48,6 +48,11 @@ void _sub(stack_t **head, unsigned int argument);
 void _div(stack_t **head, unsigned int argument);
 void _mul(stack_t **head, unsigned int argument);
 void _mod(stack_t **head, unsigned int argument);
+void _pchar(stack_t **head, unsigned int arg);
+void _pstr(stack_t **h, unsigned int arg);
+void _rotl(stack_t **head, unsigned int arg);
+void _rotr(stack_t **h, unsigned int arg);
+
 
 void free_double(char **s);
 int _strlen_space(char *s);

@@ -29,7 +29,7 @@ return (argument);
 
 void check_others(char **tokens, char *s, FILE *file)
 {
-if (!(_strcmp(tokens[0], 5, "add", "pint", "pop", "sub", "swap", "div", "mul", "mod")))
+if (!(_strcmp(tokens[0], 5, "add", "pint", "pop", "sub", "swap", "div", "mul", "mod", "pchar", "pstr")))
 {
 if (!(_strcmp(tokens[0], 5, "add", "sub", "swap", "div", "mul", "mod")))
 {
@@ -37,6 +37,23 @@ if (!(head) || !(head)->next)
 {
 if (head)
 free(head);
+}
+}
+if (strcmp(tokens[0], "pstr") == 0)
+{
+if (!head)
+{
+free(tokens), free(s), free(file);
+exit(EXIT_FAILURE);
+}
+}
+if (strcmp(tokens[0], "pchar") == 0)
+{
+if (!head)
+{
+fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+free(tokens), free(s), free(file);
+exit(EXIT_FAILURE);
 }
 }
 if (strcmp(tokens[0], "mod") == 0)
